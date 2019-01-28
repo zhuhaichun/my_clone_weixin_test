@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import '../constants.dart' show AppColors,AppStyles,constants;
+import '../constants.dart' show AppColors,AppStyles,constants,Device;
 import '../modal/converastion.dart';
 import '../constants.dart';
-
 
 
 class _ConversationItem extends StatelessWidget{
@@ -110,6 +109,47 @@ class _ConversationItem extends StatelessWidget{
     );
   }
 }
+class _DeviceInfoItem extends StatelessWidget{
+
+  const _DeviceInfoItem({Key key,this.device : Device.WIN})
+      :assert (device != null),super(key:key);
+
+
+  final Device device;
+
+  int get iconName{
+    return device == Device.WIN ? 0xe6b5 : 0xe662;
+  }
+
+  String get deviceName{
+    return device == Device.WIN ? "Windows" : "Mac";
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.only(left: 24.0,top: 10.0,right: 24.0,bottom: 10.0),
+      decoration: BoxDecoration(
+        border: Border(
+          bottom: BorderSide(width: constants.DIVIDER_WIDTH,color: Color(AppColors.DIVIDER_COLOR))
+        ),
+        color: Color(AppColors.DEVICE_INFO_ITEM_BG_COLOR)
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          Icon(IconData(
+              this.iconName,
+            fontFamily: constants.APP_ICONFONT_FAMILY
+          ),size: 24.0,color: Color(AppColors.DEVICE_INFO_ICON_COLOR),),
+          SizedBox(width: 16.0,),
+          Text('$deviceName微信已登录，手机通知已关闭',style: AppStyles.DeviceInfoItemTextStyle,)
+        ],
+      ),
+    );
+  }
+}
 
 class ConversationPage extends StatefulWidget{
   @override
@@ -119,11 +159,15 @@ class ConversationPage extends StatefulWidget{
 
 }
 class _ConversationPageState extends State<ConversationPage>{
+  List mockConversations = conversatioMockData['conversation'];
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
         itemBuilder: (context,index){
-          return _ConversationItem(conversation:mockConversations[index]);
+          if(index == 0){
+            return _DeviceInfoItem(device: Device.MAC,);
+          }
+          return _ConversationItem(conversation:mockConversations[index - 1]);
         },
       itemCount: mockConversations.length,
     );
