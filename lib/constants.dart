@@ -19,6 +19,8 @@ class AppColors{
     static const DEVICE_INFO_ITEM_BG_COLOR = 0xfff5f5f5;
     static const DEVICE_INFO_ITEM_TEXT_COLOR = 0xff606062;
     static const DEVICE_INFO_ICON_COLOR = 0xff606062;
+    static const CONTACT_GROUP_TITLE_BG_COLOR = 0xffebebeb;
+    static const CONTACT_GUOUP_TITLE_TEXT_COLOR = 0xff888888;
 }
 class AppStyles{
   static const TitleStyle = TextStyle(
@@ -36,6 +38,10 @@ class AppStyles{
   static const DeviceInfoItemTextStyle = TextStyle(
     fontSize: 13.0,
     color: Color(AppColors.DEVICE_INFO_ITEM_TEXT_COLOR),
+  );
+  static const GroupTitleItemTextStyle = TextStyle(
+    fontSize: 14.0,
+    color: Color(AppColors.CONTACT_GUOUP_TITLE_TEXT_COLOR)
   );
 }
 class constants{
