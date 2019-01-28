@@ -45,4 +45,5 @@ class constants{
   static const UNREAD_MAG_NOTIFY_DOT_SIZE = 20.0;
   static const CONVERSATION_MUTE_ICON_SIZE = 18.0;
   //static const DEVICE_INFO_ITEM_HEIGHT =
+  static const CONTACT_AVATAR_SIZE = 36.0;
 }

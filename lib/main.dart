@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import './constants.dart' show AppColors,constants;
 import './home/conversation_page.dart'show ConversationPage;
+import './home/contacts_page.dart';
 
 enum ActionItems{
   GROUP_CHAT,ADD_FRIEND,QR_SCAN,PAYMENT,HELP}
@@ -22,16 +23,16 @@ class MyApp extends StatelessWidget {
 
 }
 class NavigationIconView{
-  final String _title;
-  final IconData _icon;
-  final IconData _activeIcon;
+//  final String _title;
+//  final IconData _icon;
+//  final IconData _activeIcon;
   final BottomNavigationBarItem item;
   NavigationIconView({
     Key key,
     String title,
     IconData icon,
     IconData activeIcon
-  }):_title = title, _icon = icon,_activeIcon = activeIcon,
+  })://_title = title, _icon = icon,_activeIcon = activeIcon,
       item = BottomNavigationBarItem(
         icon: Icon(icon),
         title: Text(title,),
@@ -181,7 +182,7 @@ class _FirstScreenState extends State<FirstScreen>{
     );
     pages = [
       ConversationPage(),
-      Container(color: Colors.lightBlueAccent,),
+      ContactsPage(),
       Container(color: Colors.amber,),
       Container(color: Colors.deepPurpleAccent,),
     ];
