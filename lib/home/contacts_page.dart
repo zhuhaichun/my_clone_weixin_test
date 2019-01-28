@@ -109,6 +109,10 @@ class _ContactsPageState extends State<ContactsPage>{
   void initState() {
     _contacts..addAll(data.contacts)
       ..addAll(data.contacts)..addAll(data.contacts);
+    _contacts.sort((Contact a,Contact b){
+      return a.nameIndex.compareTo(b.nameIndex);
+    });
+  //_contacts.sort((Contact a, Contact b) => a.nameIndex.compareTo(b.nameIndex));
   }
 
   @override
@@ -118,8 +122,17 @@ class _ContactsPageState extends State<ContactsPage>{
           if(index < _functionButtons.length){
             return _functionButtons[index];
           }
-          Contact _contact = _contacts[index - _functionButtons.length];
-          return _ContactItem(avatar: _contact.avatar,title: _contact.name,groupTitle: _contact.nameIndex,);
+          bool _isGroupTitle =true;
+          int _contactIndex = index - _functionButtons.length;
+          Contact _contact = _contacts[_contactIndex];
+          if(_contactIndex >= 1 && _contact.nameIndex == _contacts[_contactIndex -1].nameIndex){
+            _isGroupTitle =false;
+          }
+          return _ContactItem(
+            avatar: _contact.avatar,
+            title: _contact.name,
+            groupTitle: _isGroupTitle ? _contact.nameIndex : null,
+          );
         },
       itemCount: _contacts.length + _functionButtons.length,
 
