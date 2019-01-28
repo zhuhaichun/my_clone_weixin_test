@@ -159,17 +159,27 @@ class ConversationPage extends StatefulWidget{
 
 }
 class _ConversationPageState extends State<ConversationPage>{
-  List mockConversations = conversatioMockData['conversation'];
+
+  final ConversationPageData data = ConversationPageData.mock();
+
   @override
   Widget build(BuildContext context) {
+    var mockConversations = data.conversations;
     return ListView.builder(
         itemBuilder: (context,index){
-          if(index == 0){
-            return _DeviceInfoItem(device: Device.MAC,);
+          if(data.device != null){
+            //需要显示其他设备信息
+            if(index == 0){
+              return _DeviceInfoItem(device: data.device,);
+            }
+            return _ConversationItem(conversation:mockConversations[index - 1]);
+          }else{
+            //不需要显示其他设备信息
+            return _ConversationItem(conversation:mockConversations[index]);
           }
-          return _ConversationItem(conversation:mockConversations[index - 1]);
+
         },
-      itemCount: mockConversations.length,
+      itemCount: data.device != null ? mockConversations.length + 1 : mockConversations.length,
     );
   }
 }
