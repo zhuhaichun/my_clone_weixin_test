@@ -52,4 +52,5 @@ class constants{
   static const CONVERSATION_MUTE_ICON_SIZE = 18.0;
   //static const DEVICE_INFO_ITEM_HEIGHT =
   static const CONTACT_AVATAR_SIZE = 36.0;
+  static const INDEX_BAR_WIDTH = 24.0;
 }
