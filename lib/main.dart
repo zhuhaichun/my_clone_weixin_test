@@ -114,7 +114,7 @@ class _FirstScreenState extends State<FirstScreen>{
                     value: ActionItems.ADD_FRIEND,
                   ),
                   PopupMenuItem(
-                    child: _buildPopupMenuItem(0xe8ca, "扫一扫"),
+                    child: _buildPopupMenuItem(0xe661, "扫一扫"),
                   value: ActionItems.QR_SCAN
                   ),
                   PopupMenuItem(
@@ -122,7 +122,7 @@ class _FirstScreenState extends State<FirstScreen>{
                     value: ActionItems.PAYMENT
                   ),
                   PopupMenuItem(
-                    child: _buildPopupMenuItem(0xe661, "帮助与反馈"),
+                    child: _buildPopupMenuItem(0xe605, "帮助与反馈"),
                     value: ActionItems.HELP
                   )
                 ];

@@ -9,7 +9,9 @@ class AppColors{
     static const CONVERSATION_BACKGTOUND_COLOR = 0xffffffff;
     static const DES_TEXT_COLOR = 0xff9e9e9e;
     static const DIVIDER_COLOR = 0xffd9d9d9;
-
+    static const NOTIFY_DOT_BG_COLOR = 0xffff3e3e;
+    static const NOTIFY_DOT_TEXT_COLOR = 0xffffffff;
+    static const CONVERSATION_MUTE_ICON_COLOR = 0xffd8d8d8;
 }
 class AppStyles{
   static const TitleStyle = TextStyle(
@@ -20,9 +22,15 @@ class AppStyles{
     fontSize: 12.0,
     color: Color(AppColors.DES_TEXT_COLOR)
   );
+  static const UnreadMsgCountStyle = TextStyle(
+    fontSize: 12.0,
+    color: Color(AppColors.NOTIFY_DOT_TEXT_COLOR)
+  );
 }
 class constants{
   static const APP_ICONFONT_FAMILY = "appIconFont";
   static const CONVERSATION_AVATAR_SIZE = 48.0;
   static const DIVIDER_WIDTH = 1.0;
+  static const UNREAD_MAG_NOTIFY_DOT_SIZE = 20.0;
+  static const CONVERSATION_MUTE_ICON_SIZE = 18.0;
 }
