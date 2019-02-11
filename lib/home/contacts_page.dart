@@ -184,7 +184,7 @@ class _ContactsPageState extends State<ContactsPage> {
     super.dispose();
   }
 
-  String getLetter(BuildContext context, int tileHeight, Offset globalPos){
+  String getLetter(BuildContext context, double tileHeight, Offset globalPos){
     RenderBox _box = context.findRenderObject();
     var lobal = _box.globalToLocal(globalPos);
     int index = (lobal.dy ~/ tileHeight).clamp(0, INDEX_BAR_WORDS.length - 1);
@@ -208,7 +208,7 @@ class _ContactsPageState extends State<ContactsPage> {
       );
     }).toList();
     final _totalHeight = constraints.biggest.height;
-    final int _tileHeight = _totalHeight ~/ _letter.length;
+    final double _tileHeight = _totalHeight / _letter.length;
     return GestureDetector(
       child:  Column(
           children: _letter
@@ -303,7 +303,7 @@ class _ContactsPageState extends State<ContactsPage> {
             borderRadius: BorderRadius.all(Radius.circular(constants.INDEX_LETTER_BOX_RADIUS)),
           ),
           child: Center(
-            child: Text(widget._currentLetter,style: AppStyles.INDEX_LETTER_BOX_TEXT_STYLE,),
+            child: Text(widget._currentLetter,style: AppStyles.IndexLetterBoxTextStyle,),
           ),
         ),
       )

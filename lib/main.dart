@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import './constants.dart' show AppColors,constants;
 import './home/conversation_page.dart'show ConversationPage;
 import './home/contacts_page.dart';
+import './home/discover_page.dart';
 
 enum ActionItems{
   GROUP_CHAT,ADD_FRIEND,QR_SCAN,PAYMENT,HELP}
@@ -183,7 +184,7 @@ class _FirstScreenState extends State<FirstScreen>{
     pages = [
       ConversationPage(),
       ContactsPage(),
-      Container(color: Colors.amber,),
+      DiscoverPage(),
       Container(color: Colors.deepPurpleAccent,),
     ];
   }

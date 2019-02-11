@@ -22,6 +22,7 @@ class AppColors{
     static const CONTACT_GROUP_TITLE_BG_COLOR = 0xffebebeb;
     static const CONTACT_GUOUP_TITLE_TEXT_COLOR = 0xff888888;
     static const INDEX_LETTER_BOX_BG = Colors.black45;
+    static const BACKGROUND_COLOR = 0xffededed;
 }
 class AppStyles{
   static const TitleStyle = TextStyle(
@@ -44,7 +45,7 @@ class AppStyles{
     fontSize: 14.0,
     color: Color(AppColors.CONTACT_GUOUP_TITLE_TEXT_COLOR)
   );
-  static const INDEX_LETTER_BOX_TEXT_STYLE = TextStyle(
+  static const IndexLetterBoxTextStyle = TextStyle(
     fontSize: 64.0,
     color: Colors.white
   );
@@ -60,4 +61,6 @@ class constants{
   static const INDEX_BAR_WIDTH = 24.0;
   static const INDEX_LETTER_BOX_SIZE = 114.0;
   static const INDEX_LETTER_BOX_RADIUS = 4.0;
+  static const FULL_WIDTH_ICON_BUTTON_ICON_SIZE = 24.0;
+
 }
