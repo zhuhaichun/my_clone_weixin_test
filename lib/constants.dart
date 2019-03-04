@@ -49,6 +49,14 @@ class AppStyles{
     fontSize: 64.0,
     color: Colors.white
   );
+  static const MyselfNickNameTextStyle = TextStyle(
+    fontSize: 16.0,
+    color: Colors.black
+  );
+  static const MyselfWeChatAccountTextStyle = TextStyle(
+    fontSize: 14.0,
+    color: Colors.grey
+  );
 }
 class constants{
   static const APP_ICONFONT_FAMILY = "appIconFont";
@@ -62,5 +70,6 @@ class constants{
   static const INDEX_LETTER_BOX_SIZE = 114.0;
   static const INDEX_LETTER_BOX_RADIUS = 4.0;
   static const FULL_WIDTH_ICON_BUTTON_ICON_SIZE = 24.0;
+  static const MYSELF_TITLE_ICON_SIZE = 64.0;
 
 }

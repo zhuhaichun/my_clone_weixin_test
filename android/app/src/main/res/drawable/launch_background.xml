@@ -9,4 +9,11 @@
             android:gravity="center"
             android:src="@mipmap/launch_image" />
     </item> -->
+    <item>
+        <!-- 中间的图片 -->
+        <bitmap
+            android:gravity="center"
+            android:scaleType="fitXY"
+            android:src="@mipmap/ic_launcher" />
+    </item>
 </layer-list>
